@@ -32,3 +32,4 @@ cnpm i
 1. [scss 配置](https://www.cnblogs.com/yangrenmu/p/7118398.html)
 2. [npm run eject](https://blog.csdn.net/buddha_itxiong/article/details/80431142)
 3. [eslint 配置](https://www.jianshu.com/p/0c7f1764d753)
+4. [create-react-app 命令行工具详解](https://www.cnblogs.com/ye-hcj/p/7191153.html)

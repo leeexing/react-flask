@@ -6,8 +6,56 @@ This project is based on react and flask
 2. 后台语言使用 python + flask + mongodb + mySQL
 3. 仅供学习
 
+## 项目实现
+
+- [x] 主页
+- [x] 读书页
+- [ ] 图书标签
+- [ ] 详情页
+
+## 技术栈
+
+- react
+- redux
+- redux-thunk
+- react-router
+- react-slick
+- antd
+- scss
+- python
+- flask
+
 ## 项目结构
+
+|__docs/
+|__public/
+|__src/
+  |__assets/
+  |__component/
+  |__page/
+  |__router/
+  |__store/
+  |__style/
+  |__util/
+  |__App.jsx
+  |__index.js
+|__server/
+  |__app.js
+
 
 ## 项目启动
 
+1. `npm i`
+
+2. `python app.js` or `node app.js`
+
+3. `npm start`
+
 ## 参考
+
+1. [豆瓣开发者文档](https://developers.douban.com/wiki/?title=guide)
+2. [别人优秀的API 来源](https://github.com/jokermonn/-Api/blob/master/DoubanMovie.md)
+
+## License
+
+MIT
