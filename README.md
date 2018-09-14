@@ -55,6 +55,7 @@ This project is based on react and flask
 
 1. [豆瓣开发者文档](https://developers.douban.com/wiki/?title=guide)
 2. [别人优秀的API 来源](https://github.com/jokermonn/-Api/blob/master/DoubanMovie.md)
+3. [理解 OAuth 2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)
 
 ## License
 
