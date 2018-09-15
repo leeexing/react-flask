@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './style.scss'
-import notFoundImg from 'assets/404.jpg'
+import serverErrorImg from 'assets/500.png'
 
-class NotFound extends Component {
+class ServerError extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -23,15 +23,15 @@ class NotFound extends Component {
   }
   render () {
     return (
-      <div className="notfound">
-        <div className="notfound-img">
-          <img src={notFoundImg} alt=""/>
+      <div className="server-error">
+        <div className="server-error-img">
+          <img src={serverErrorImg} alt=""/>
         </div>
-        <h2>你想访问的页面不存在</h2>
-        <p>{this.state.remainTime}秒后 <Link className="notfound-back" to="/">返回首页</Link></p>
+        <h2>服务器错误</h2>
+        <p>{this.state.remainTime}秒后 <Link className="server-error-back" to="/">返回首页</Link></p>
       </div>
     )
   }
 }
 
-export default withRouter(NotFound)
+export default ServerError
