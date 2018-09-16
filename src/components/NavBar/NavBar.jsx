@@ -9,38 +9,25 @@ class NavBar extends Component {
       current: 'home'
     }
   }
-  handleClick (e) {
-    console.log('click', e)
-    this.setState({
-      current: e.key
-    })
-  }
   render () {
     return (
       <nav className="app-nav">
-        <Menu
-          onClick={this.handleClick.bind(this)}
-          selectedKeys={[this.state.current]}
-          mode="horizontal"
-        >
-          <Menu.Item key="home">
-            <Icon type="home"/>豆瓣
-          </Menu.Item>
-          <Menu.Item key="film">
-            <Icon type="cloud"/>电影
-          </Menu.Item>
-          <Menu.Item key="reading">
-            <Icon type="book"/>读书
-          </Menu.Item>
-          <Menu.Item key="login">
-            <Icon type="login"/>登陆
-          </Menu.Item>
-          <Menu.Item key="register">
-            <Icon type="coffee"/>注册
-          </Menu.Item>
-        </Menu>
-        <div className="music-search">
-
+        <div className="nav-bd">
+          <div className="nav-items"></div>
+          <div className="nav-others">
+            <div className="nav-doubanapp"></div>
+            <div className="nav-info"></div>
+          </div>
+        </div>
+        <div className="nav-music">
+          豆瓣音乐
+          <Search
+            placeholder="唱片名、表演者、条码、ISRC"
+            enterButton="Search"
+            size="large"
+            onSearch={value => console.log(value)}
+          />
+          <div className="nav-music"></div>
         </div>
       </nav>
     )
