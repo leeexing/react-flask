@@ -1,8 +1,14 @@
-# react-router
+# React
 
+## react-dom
+
+react.js 是 React 的核心库。react-dom 是提供与 DOM 相关的功能
+
+
+## react-router
 > V4.第四版
 
-## 和 react-router-dom 作比较
+### 和 react-router-dom 作比较
 
 写法1:
 
@@ -48,3 +54,41 @@ react-router-dom中package.json依赖:
     "warning": "^3.0.0"
   }
 安装了react-router-dom，npm会解析并安装上述依赖包。可以看到，其中包括react-router。
+
+
+## redux
+
+
+## 敲代码学习
+
+### 组件
+React 组件使用一个名为 render() 的方法，接收数据作为输入，输出页面中对应展示的内容
+
+组件从概念上看就像是函数，他可以接收任意的输入值（称之为 props ），并返回一个需要在页面上展示的 React 元素
+
+无论是使用函数或是类来申明一个组件，他决不能修改它自己的props。
+
+-所有的React组件必须像纯函数那样使用他们的props。
+
+### 有状态组件
+处理使用外部传入的数据以外（通过 this.props 访问传入数据），组件还可以拥有其他内部的状态数据（通过 this.state 访问二状态数据）。当组建的状态数据改变时，组件会调用 render() 方法重新渲染
+
+如何传递 props 到基础构造函数的
+
+```js
+constructor (props) {
+  super(props)
+  this.state ={
+    date: Date.now()
+  }
+}
+
+```
+
+### 应用
+使用 props 和 state
+
+### 正确地使用状态
+- 不要直接更新状态
+- 状态更新可能是异步的
+- 状态更新合并
