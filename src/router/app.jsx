@@ -12,9 +12,9 @@ const Routes = () => (
     <NavBar/>
     <main className="app-main">
       <Switch>
-        <Route path={`/${host}todo`} component={Todo}></Route>
+        <Route path={`/${host}todo`} exact component={Todo}></Route>
         <Route path={`/${host}500`} component={ServerError}></Route>
-        <Route path={`/${host}`} exact component={HomePage}></Route>
+        <Route path={`/${host}`} component={HomePage}></Route>
         <Route path={'/*'} component={NotFoundRoute}></Route>
       </Switch>
     </main>

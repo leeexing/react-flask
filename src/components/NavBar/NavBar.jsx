@@ -45,7 +45,7 @@ class NavBar extends Component {
           path: '/time'
         },{
           name: '豆品',
-          path: '/doupin'
+          path: '/todo'
         },{
           name: '更多',
           path: '/more'

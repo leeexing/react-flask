@@ -7,7 +7,7 @@ class Swipper extends Component {
     console.log(this.props)
   }
   afterChange (e) {
-    console.log(e)
+    // console.log(e)
   }
   render () {
     return (

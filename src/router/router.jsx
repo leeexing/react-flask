@@ -7,8 +7,8 @@ const host = ''
 const Routes = () => (
   <Router>
     <React.Fragment>
-      <Route path={`/${host}login`} component={Login}/>
-      <Route path="/" exact component={AppRoutes}/>
+      <Route path={`/${host}login`} exact component={Login}/>
+      <Route component={AppRoutes}/>
     </React.Fragment>
   </Router>
 )
