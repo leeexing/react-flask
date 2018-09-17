@@ -42,7 +42,7 @@ class NavBar extends Component {
           path: '/fm'
         },{
           name: '时间',
-          path: '/time'
+          path: '/404'
         },{
           name: '豆品',
           path: '/todo'

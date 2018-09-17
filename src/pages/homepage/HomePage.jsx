@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import SlickSlider from './SlickSlider'
+import InfoCard from './InfoCard'
 
 class HomePage extends Component {
   constructor (props) {
@@ -22,7 +23,9 @@ class HomePage extends Component {
             <SlickSlider sliderImgs={this.state.sliderImgs}/>
           </Col>
           <Col span={8} className="aside">
-
+            <aside>
+              <InfoCard/>
+            </aside>
           </Col>
         </Row>
       </div>
