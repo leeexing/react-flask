@@ -20,7 +20,7 @@ class leeing extends Component {
       <div className="pop-artist">
         <div className="pop-header">
           本周流行音乐人
-          <span>|</span>
+          <span className="cut-off-line">|</span>
           <span className="fast">上升最快音乐人</span>
         </div>
         <ul className="pop-list">

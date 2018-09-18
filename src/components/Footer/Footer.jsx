@@ -5,7 +5,7 @@ class Footer extends Component {
   render () {
     return (
       <footer className="app-footer">
-        <div>北京科技有限公司</div>
+        <div>© 2005－2018 douban.com, all rights reserved 北京豆网科技有限公司</div>
         <div>
           <Link>关于豆瓣</Link>
           <Link>在豆瓣工作</Link>

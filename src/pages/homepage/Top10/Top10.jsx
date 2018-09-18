@@ -4,6 +4,13 @@ import { Button, Icon } from 'antd'
 class leeing extends Component {
 
   render () {
+    const hotSongs = [
+      {src: 'https://img1.doubanio.com/view/sitesong/small/public/1535692767.jpg', name: 'Hold On To My Side (留在我身边)', author: '梁晓雪', times: 9913},
+      {src: 'https://img3.doubanio.com/view/site/small/public/5e7b323e46750dd.jpg', name: '大圣啊', author: '尚哲', times: 1735},
+      {src: 'https://img1.doubanio.com/view/site/small/public/fa424d747eb8449.jpg', name: 'Bon Anniversaire', author: 'Magic', times: 365},
+      {src: 'https://img1.doubanio.com/view/site/small/public/c7a7cbe1ae4ea1a.jpg', name: '燕园画像（女生版） ', author: 'Loop Fighter', times: 1025},
+      {src: 'https://img3.doubanio.com/view/sitesong/small/public/1535031794.jpg', name: 'Last Days of Louis XIV (Mark Lee mix)', author: '绝对春节', times: 520},
+    ]
     return (
       <div className="hot-songs">
         <div className="header">
@@ -20,13 +27,28 @@ class leeing extends Component {
             <li><a href="">说唱</a></li>
           </ul>
           <ul className="hot-artist-songs">
-            <li className="artist-song">
-              <div className="avatar">
-                <img src="https://img1.doubanio.com/view/sitesong/small/public/1535692767.jpg" alt=""/>
-              </div>
-              <div className="info"></div>
-              <div className="rank"></div>
-            </li>
+          {
+            hotSongs.map((song, index) =>
+              <li className="artist-song" key={index}>
+                <div className="avatar">
+                  <img src={song.src} alt=""/>
+                  <span>
+                    <Icon  type="caret-right" theme="outlined" />
+                  </span>
+                </div>
+                <div className="info">
+                  <h3>{song.name}</h3>
+                  <p>
+                    <span>{song.author}</span>
+                    <span>/</span>
+                    <span>{song.times}</span>
+                    <span>次播放</span>
+                  </p>
+                </div>
+                <div className="rank">{index + 1}</div>
+              </li>
+            )
+          }
           </ul>
         </div>
       </div>
