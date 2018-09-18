@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import './countUp.scss'
+import CountUp from 'countup.js'
 
-class CountUp extends Component {
+class Countup extends Component {
   constructor (props) {
     super(props)
     this.state = {
       startValue: this.props.startValue || 0,
-      endValue: this.props.endValue
+      endValue: Number(this.props.endValue),
+      decimal: this.props.decimal || 0, // 保留几位小数
+      duration: this.props.duration || 2
     }
   }
   componentDidMount () {
-    console.log(this.props)
+    let demo = {}
+    demo = new CountUp(this.props.id, this.state.startValue, this.state.endValue, this.state.decimal, this.setState.duration)
+    if (!demo.error) {
+      demo.start()
+    }
   }
   render () {
     return (
@@ -24,5 +31,4 @@ class CountUp extends Component {
   }
 }
 
-export default CountUp
-
+export default Countup

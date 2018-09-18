@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import SlickSlider from './SlickSlider'
 import InfoCard from './InfoCard'
+import HotMusician from './HotMusician'
+import PopularArtist from './PopularArtist'
+import {Top10} from './view.js'
+import 'styles/homePage.scss'
 
 class HomePage extends Component {
   constructor (props) {
@@ -21,10 +25,13 @@ class HomePage extends Component {
         <Row gutter={16}>
           <Col span={16} className="article">
             <SlickSlider sliderImgs={this.state.sliderImgs}/>
+            <PopularArtist/>
           </Col>
           <Col span={8} className="aside">
             <aside>
               <InfoCard/>
+              <HotMusician/>
+              <Top10/>
             </aside>
           </Col>
         </Row>

@@ -1,0 +1,162 @@
+.app-home {
+  // !左边
+  .article, .aside aside {
+    > div {
+      margin-bottom: 30px
+    }
+  }
+  // -swipper
+  .slick-slider {
+    height: 250px;
+    .slick-list {
+      max-height: 100%;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  // -本周流行音乐人
+  .pop-artist {
+    .pop-header {
+      line-height: 30px;
+      font-size: 17px;
+      color: #222;
+      span {
+        font-size: 14px;
+        &.fast {
+          color: #999;
+        }
+      }
+    }
+    .pop-list {
+      padding: 15px 0 0 30px;
+      border-top: 2px solid #138A64;
+      background: #F5F7F8;
+      overflow: hidden;
+      .pop-item {
+        float: left;
+        width: 25%;
+        padding-right: 30px;
+        text-align: center;
+        .cover {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 125px;
+          padding: 4px;
+          margin-bottom: 10px;
+          border: 4px solid #fff;
+          box-shadow: 0 0 0 1px #DFDCDC;
+          .artist-photo {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+          }
+          .play {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: #fff;
+            &:hover {
+              color: #138A64;
+            }
+          }
+        }
+        .title {
+          line-height: 30px;
+          color: #138A64;
+          font-size: 16px;
+        }
+        .gener {
+          color: #999;
+          font-size: 13px;
+          margin: 1px 0 16px 0;
+        }
+      }
+
+    }
+  }
+  /* !右侧 */
+  .aside {
+    color: #222;
+    font-size: 15px;
+  }
+  // -热门音乐人分类
+  .hot-musician-tag {
+    .tag-header {
+      padding: 2px 0;
+      a {
+        float: right;
+        color: #999;
+        font-size: 13px;
+      }
+    }
+    .tag-list {
+      li {
+        display: inline-block;
+        width: 50%;
+        border: 1px solid #F5F7F8;
+        padding: 1px 1px 1px 0;
+        a {
+          display: inline-block;
+          padding-left: 5px;
+          width: 100%;
+          height: 36px;
+          line-height: 36px;
+          color: #138A64;
+          &:hover {
+            background: #F5F7F8;
+          }
+        }
+      }
+    }
+  }
+  // -本周单曲榜
+  .hot-songs {
+    .header {
+      margin-bottom: 10px;
+      padding: 5px 0;
+      line-height: 26px;
+      border-bottom: 1px solid #eee;
+      .play-all {
+        float: right;
+      }
+    }
+    .section-titles {
+      overflow: hidden;
+      margin-top: 10px;
+      li {
+        float: left;
+        font-size: 13px;
+        &::before {
+          display: inline-block;
+          content: "|";
+          padding: 0 3px;
+          color: #333;
+        }
+        a {
+          color: #999;
+          font-weight: normal;
+        }
+        &:first-child {
+          &::before {
+            content: "";
+            color: transparent;
+          }
+          a {
+            color: #138A64;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .hot-artist-songs {
+      margin-top: 10px;
+    }
+  }
+
+}
