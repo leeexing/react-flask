@@ -5,7 +5,7 @@ import InfoCard from './InfoCard'
 import HotMusician from './HotMusician'
 import PopularArtist from './PopularArtist'
 import {Top10} from './view.js'
-import 'styles/homePage.scss'
+import 'styles/homePage.less'
 
 class HomePage extends Component {
   constructor (props) {

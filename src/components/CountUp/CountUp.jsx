@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './countUp.scss'
+import './countUp.less'
 import CountUp from 'countup.js'
 
 class Countup extends Component {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Input, Popover } from 'antd'
 import { Link } from 'react-router-dom'
-import 'styles/navBar.scss'
-// import navLogoImg from ''
+import 'styles/navBar.less'
 
 const appContent = (
   <div>

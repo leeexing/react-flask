@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import './style.scss'
+import './style.less'
 import notFoundImg from 'assets/404.jpg'
 
 class NotFound extends Component {

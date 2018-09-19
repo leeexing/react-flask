@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './style.scss'
+import './style.less'
 import serverErrorImg from 'assets/500.png'
 
 class ServerError extends Component {
