@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
-import 'styles/login.scss'
+import 'styles/login.less'
 
 const FormItem = Form.Item
 

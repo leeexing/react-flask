@@ -154,6 +154,7 @@ module.exports = {
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
+              // plugins: [['import',[{libraryName: 'antd',style: true,}]]], // - add on 9/19
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
@@ -196,6 +197,22 @@ module.exports = {
           {
             test: /\.scss$/,
             loaders: ['style-loader', 'css-loader', 'sass-loader'],
+          },
+          {
+            test: /\.less$/,
+            use: [
+              {
+                loader: 'style-loader'
+              }, {
+                loader: 'css-loader'
+              }, {
+                loader: 'less-loader',
+                options: {
+                  javascriptEnabled: true, // -less 3.X 的时候需要添加一句这个。
+                }
+              }
+            ],
+            // loaders: ['style-loader', 'css-loader', 'less-loader'], // *old wrong
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
