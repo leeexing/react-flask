@@ -19,6 +19,18 @@ class Countup extends Component {
       demo.start()
     }
   }
+  componentWillUpdate () {
+    console.log(this.props.endValue, '---', this.state.endValue)
+    if (this.state.endValue !== this.props.endValue) {
+      this.setState({
+        endValue: this.props.endValue
+      })
+      let demo = new CountUp(this.props.id, this.state.startValue, this.state.endValue, this.state.decimal, this.setState.duration)
+      if (!demo.error) {
+        demo.start()
+      }
+    }
+  }
   render () {
     return (
       <div className="count-up">

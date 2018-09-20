@@ -19,6 +19,9 @@ class HomePage extends Component {
       ]
     }
   }
+  componentDidMount () {
+    console.log('7788')
+  }
   render () {
     return (
       <div className="app-home">
