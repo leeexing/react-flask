@@ -1,13 +1,7 @@
-import http from './http'
+import DoubanMusicApi from './api'
 
-const DoubanMusicApi = {
-  getIndex () {
-    return http.get('/')
-  },
-  getMusicList (data) {
-    return http.post('/list', data)
-  }
+const APIS = {
+  ...DoubanMusicApi
 }
 
-export default DoubanMusicApi
-
+export default APIS

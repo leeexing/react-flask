@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
 import { Carousel } from 'antd'
+import api from '@/api'
 
 class Swipper extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      sliderImgs: []
+    }
+  }
   componentDidMount () {
-    // console.log(this.props)
+    api.getTopBannerImgs().then(res => {
+      this.setState({
+        sliderImgs: res.imgList
+      })
+    })
   }
   afterChange (e) {
     // console.log(e)
@@ -17,7 +28,7 @@ class Swipper extends Component {
         afterChange={this.afterChange.bind(this)}
       >
         {
-          this.props.sliderImgs.map((item, index) =>
+          this.state.sliderImgs.map((item, index) =>
             <div key={index}>
               <img src={item} alt={index}/>
             </div>

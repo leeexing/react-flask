@@ -7,7 +7,7 @@ class Countup extends Component {
     super(props)
     this.state = {
       startValue: this.props.startValue || 0,
-      endValue: Number(this.props.endValue),
+      endValue: this.props.endValue,
       decimal: this.props.decimal || 0, // 保留几位小数
       duration: this.props.duration || 2
     }
@@ -19,16 +19,10 @@ class Countup extends Component {
       demo.start()
     }
   }
-  componentWillUpdate () {
-    console.log(this.props.endValue, '---', this.state.endValue)
-    if (this.state.endValue !== this.props.endValue) {
-      this.setState({
-        endValue: this.props.endValue
-      })
-      let demo = new CountUp(this.props.id, this.state.startValue, this.state.endValue, this.state.decimal, this.setState.duration)
-      if (!demo.error) {
-        demo.start()
-      }
+  componentDidUpdate () {
+    let demo = new CountUp(this.props.id, this.state.startValue, this.props.endValue, this.state.decimal, this.setState.duration)
+    if (!demo.error) {
+      demo.start()
     }
   }
   render () {

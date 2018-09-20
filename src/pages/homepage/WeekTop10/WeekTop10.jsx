@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import { Button, Icon } from 'antd'
+// import api from '@/api'
 
 class leeing extends Component {
-
+  constructor (props) {
+    super(props)
+    this.state = {
+      popularSongs: []
+    }
+  }
+  componentDidMount () {
+    // api.getWeekPopularSongs().then(res => {
+    //   console.log('+++', res)
+    // })
+  }
   render () {
     const hotSongs = [
       {src: 'https://img1.doubanio.com/view/sitesong/small/public/1535692767.jpg', name: 'Hold On To My Side (留在我身边)', author: '梁晓雪', times: 9913},

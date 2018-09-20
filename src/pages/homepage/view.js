@@ -1,5 +1,9 @@
-import Top10 from './Top10/Top10'
+import WeekTop10 from './WeekTop10/WeekTop10'
+import Douban250 from './Douban250/Douban250'
+import EditorFeature from './EditorFeature/EditorFeature'
 
 export {
-  Top10
+  WeekTop10,
+  Douban250,
+  EditorFeature
 }
