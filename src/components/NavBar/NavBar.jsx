@@ -13,6 +13,7 @@ class NavBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      isSignIn: false,
       current: 'home',
       navItems: [
         {
@@ -70,7 +71,24 @@ class NavBar extends Component {
       ]
     }
   }
+  componentDidMount () {
+    console.log(this.props, '//////')
+  }
   render () {
+    let hasNoLogin = (
+      <div className="nav-info">
+        <Link to="/login">登录</Link>
+        <Link to="/register">注册</Link>
+      </div>
+    )
+
+    let hasLogin = (
+      <div className="nav-info">
+        <Link to="/reminder">提醒</Link>
+        <Link to="/doumail">豆邮</Link>
+      </div>
+    )
+
     return (
       <nav className="app-nav">
         <div className="app-nav-bd">
@@ -87,10 +105,9 @@ class NavBar extends Component {
             <div className="nav-doubanapp">
               <Link to="/doubanapp">下载豆瓣客户端</Link>
             </div>
-            <div className="nav-info">
-              <Link to="/login">登录</Link>
-              <Link to="/register">注册</Link>
-            </div>
+            {
+              this.state.isSignIn ? hasLogin : hasNoLogin
+            }
           </div>
         </div>
         <div className="app-nav-search">

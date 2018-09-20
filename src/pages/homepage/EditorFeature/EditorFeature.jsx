@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'antd'
+import { Icon } from 'antd'
 import api from '@/api'
 
 class leeing extends Component {
@@ -11,7 +11,6 @@ class leeing extends Component {
   }
   componentDidMount () {
     api.getEditorFeatureSongs().then(res => {
-      console.log('+++', res)
       this.setState({
         editorRecommendSongs: res.editorFeatureSongs
       })

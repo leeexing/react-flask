@@ -28,7 +28,7 @@ class leeing extends Component {
           this.state.popularSongs.map((item, index) =>
             <li key={index}>
               <a href="">
-                <img src={item.cover}/>
+                <img src={item.cover} alt=""/>
               </a>
               <p>
                 <a href="music-name">{item.name}</a>
