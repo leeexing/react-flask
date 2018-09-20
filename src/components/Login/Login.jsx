@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import 'styles/login.less'
+import store from '@/store'
 
 const FormItem = Form.Item
 
@@ -11,11 +12,15 @@ class Login extends Component {
       if (!err) {
         console.log('Received values of form: ', values)
       }
-      this.props.history.push('/')
       console.log(
         this.props
       )
+      store.dispatch({type: 'LOGIN'})
+      this.props.history.push('/')
     })
+  }
+  componentDidMount () {
+    console.log(store.getState())
   }
   render () {
     const { getFieldDecorator } = this.props.form

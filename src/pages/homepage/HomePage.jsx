@@ -6,6 +6,7 @@ import HotMusician from './HotMusician'
 import PopularArtist from './PopularArtist'
 import { WeekTop10, Douban250, EditorFeature } from './view.js'
 import 'styles/homePage.less'
+import store from '@/store'
 
 class HomePage extends Component {
   constructor (props) {
@@ -15,6 +16,7 @@ class HomePage extends Component {
   }
   componentDidMount () {
     console.log('hello, react')
+    console.log(store.getState())
   }
   render () {
     return (

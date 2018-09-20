@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Input, Popover } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import 'styles/navBar.less'
 
 const appContent = (
@@ -13,7 +14,7 @@ class NavBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      isSignIn: false,
+      isSignIn: this.props.hasLogin || false,
       current: 'home',
       navItems: [
         {
@@ -72,7 +73,10 @@ class NavBar extends Component {
     }
   }
   componentDidMount () {
-    console.log(this.props, '//////')
+    console.log(this.props, '+++++')
+  }
+  logout () {
+    this.props.dispatch({type: 'LOGOUT'})
   }
   render () {
     let hasNoLogin = (
@@ -86,6 +90,7 @@ class NavBar extends Component {
       <div className="nav-info">
         <Link to="/reminder">提醒</Link>
         <Link to="/doumail">豆邮</Link>
+        <Link to="/login" onClick={this.logout.bind(this)}>退出</Link>
       </div>
     )
 
@@ -143,4 +148,10 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar
+let mapStateToProps = (state, ownProps) => {
+  return {
+    hasLogin: state['hasLogin']
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)
