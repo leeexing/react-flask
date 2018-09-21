@@ -4,6 +4,41 @@
 
 react.js 是 React 的核心库。react-dom 是提供与 DOM 相关的功能
 
+## react-redux
+
+React-Redux 将所有组件分成两大类：UI 组件（presentational component）和容器组件（container component）
+
+总之，只要记住一句话就可以了：UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑。
+
+UI 组件有以下几个特征。
+
+只负责 UI 的呈现，不带有任何业务逻辑
+没有状态（即不使用this.state这个变量）
+所有数据都由参数（this.props）提供
+不使用任何 Redux 的 API
+
+下面就是一个 UI 组件的例子。
+
+const Title =
+  value => <h1>{value}</h1>;
+
+因为不含有状态，UI 组件又称为"纯组件"，即它纯函数一样，纯粹由参数决定它的值。
+
+二、容器组件
+容器组件的特征恰恰相反。
+
+* 负责管理数据和业务逻辑，不负责 UI 的呈现
+* 带有内部状态
+* 使用 Redux 的 API
+
+为了定义业务逻辑，需要给出下面两方面的信息。
+
+（1）输入逻辑：外部的数据（即state对象）如何转换为 UI 组件的参数
+
+（2）输出逻辑：用户发出的动作如何变为 Action 对象，从 UI 组件传出去。
+
+😍参考 [http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.htmls]
+
 ## PropTypes学习
 
 PropTypes定义为组件类自身的属性，用以定义prop的类型。在开发模式下，当提供一个不合法的值作为prop时，控制台会出现警告；在产品模式下，为了性能考虑应忽略propTypes
