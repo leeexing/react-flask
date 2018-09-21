@@ -4,9 +4,133 @@
 
 react.js 是 React 的核心库。react-dom 是提供与 DOM 相关的功能
 
+## PropTypes学习
+
+PropTypes定义为组件类自身的属性，用以定义prop的类型。在开发模式下，当提供一个不合法的值作为prop时，控制台会出现警告；在产品模式下，为了性能考虑应忽略propTypes
+
+在15.5版本之后, 代替使用 PropTypes 直接从 React 对象这种导入方式, 安装一个新的包 prop-types 并且使用如下的方式进行导入
+
+```js
+// After (15.5)
+import React from 'react';
+import PropTypes from 'prop-types';
+class Component extends React.Component {
+  render() {
+    return <div>{this.props.text}</div>;
+  }
+}
+Component.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
+```
+
+3.具体使用
+静态属性，只能通过类名.属性名指定
+
+```js
+MyComponent.propTypes = {
+  // 可以声明prop是特定的JS基本类型
+  // 默认情况下这些prop都是可选的
+  optionalArray:PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+
+  // 任何可以被渲染的事物：numbers, strings, elements or an array
+  // (or fragment) containing these types.
+  optionalNode: PropTypes.node,
+
+  // A React element.
+  optionalElement: PropTypes.element,
+
+  // 声明一个prop是某个类的实例，用到了JS的instanceof运算符
+  optionalMessage: PropTypes.instanceOf(Message),
+
+  // 用enum来限制prop只接受特定的值
+  optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+
+  // 指定的多个对象类型中的一个
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
+  // 指定类型组成的数组
+  optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
+
+  // 指定类型的属性构成的对象
+  optionalObjectOf: PropTypes.objectOf(PropTypes.number),
+
+  // 一个指定形式的对象
+  optionalObjectWithShape: PropTypes.shape({
+    color: PropTypes.string,
+    fontSize: PropTypes.number
+  }),
+
+  // 你可以用以上任何验证器链接‘isRequired’，来确保prop不为空
+  requiredFunc: PropTypes.func.isRequired,
+
+  // 不可空的任意类型
+  requiredAny: PropTypes.any.isRequired,
+
+  // 自定义验证器，如果验证失败，必须返回一个Error对象
+  // 不要直接使用console.warn或者throw，这些在oneOfType中都没用
+  customProp: function(props, propName, componentName) {
+    if (!/matchme/.test(props[propName])) {
+      return new Error(
+        'Invalid prop `' + propName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+  },
+
+  // 你也可以为arrayOf和objectOf提供一个验证器
+  // 如果验证失败，它也应该返回一个Error对象
+  // 在array或者object中，验证器对于每个key都会被调用The first two
+  // 验证器的前两个arguments是array或者object自身以及当前的key值
+  customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+    if (!/matchme/.test(propValue[key])) {
+      return new Error(
+        'Invalid prop `' + propFullName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+  })
+};
+
+😘// Specifies the default values for props:
+Greeting.defaultProps = {
+  name: 'Stranger'
+};
+
+😀// - 直接设置默认值
+TextSegment.defaultProps = {
+  style: {
+    alignItems: 'flex-end',
+  },
+  value: '',
+};
+
+
+```
+
+👍参考 【https://blog.csdn.net/suwu150/article/details/79460222】
 
 ## react-router
 > V4.第四版
+
+### 如何通过js实现路由跳转
+
+* Redirect
+* import PropTypes from 'prop-types'
+* withRouter -- 官方文档
+
+😘从参考： 【https://segmentfault.com/a/1190000013912862?utm_source=tag-newest】
 
 ### 和 react-router-dom 作比较
 

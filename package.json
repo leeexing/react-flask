@@ -106,7 +106,8 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^16.1.0"
+    "eslint-config-airbnb": "^16.1.0",
+    "prop-types": "^15.6.2"
   },
   "proxy": "http://localhost:7012"
 }

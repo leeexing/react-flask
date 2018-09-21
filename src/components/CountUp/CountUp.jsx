@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './countUp.less'
+import PropTypes from 'prop-types'
 import CountUp from 'countup.js'
+import './countUp.less'
 
 class Countup extends Component {
   constructor (props) {
@@ -35,6 +36,12 @@ class Countup extends Component {
       </div>
     )
   }
+}
+
+Countup.propTypes = {
+  endValue: PropTypes.number.isRequired,
+  infoText: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
 }
 
 export default Countup
