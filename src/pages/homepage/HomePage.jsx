@@ -7,6 +7,7 @@ import PopularArtist from './PopularArtist'
 import { WeekTop10, Douban250, EditorFeature } from './view.js'
 import 'styles/homePage.less'
 import store from '@/store'
+import api from '@/api'
 
 class HomePage extends Component {
   constructor (props) {
@@ -17,6 +18,9 @@ class HomePage extends Component {
   componentDidMount () {
     console.log('hello, react')
     console.log(store.getState())
+    api.getPopularSongs().then(res => {
+      console.log(res)
+    })
   }
   render () {
     return (

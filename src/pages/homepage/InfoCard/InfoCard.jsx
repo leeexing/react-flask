@@ -27,11 +27,12 @@ class InfoCard extends Component {
     })
   }
   changeCountup () {
-    let joinInfo = this.state.joinInfo.slice(0)
-    joinInfo[0].endValue += 1
-    this.setState({
-      joinInfo
-    })
+    // let joinInfo = this.state.joinInfo.slice(0)
+    // joinInfo[0].endValue += 1
+    // this.setState({
+    //   joinInfo
+    // })
+    api.getPopularSongs().then(console.log)
   }
   render () {
     return (
