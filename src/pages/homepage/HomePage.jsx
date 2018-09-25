@@ -4,7 +4,7 @@ import SlickSlider from './SlickSlider'
 import InfoCard from './InfoCard'
 import HotMusician from './HotMusician'
 import PopularArtist from './PopularArtist'
-import { WeekTop10, Douban250, EditorFeature } from './view.js'
+import { WeekTop10, Douban250, EditorFeature, NewAlbumList, HotProgramme } from './view.js'
 import 'styles/homePage.less'
 import store from '@/store'
 // import api from '@/api'
@@ -35,6 +35,8 @@ class HomePage extends Component {
             <SlickSlider/>
             <PopularArtist/>
             <EditorFeature/>
+            <NewAlbumList/>
+            <HotProgramme/>
           </Col>
           <Col span={8} className="aside">
             <aside>

@@ -22,6 +22,7 @@
       line-height: 30px;
       font-size: 17px;
       color: #222;
+      border-bottom: 2px solid #138A64;
       span {
         font-size: 14px;
         &.fast {
@@ -38,7 +39,6 @@
     .pop-list {
       min-height: 100px;
       padding: 15px 0 0 30px;
-      border-top: 2px solid #138A64;
       background: #F5F7F8;
       overflow: hidden;
       .pop-item {
@@ -93,6 +93,7 @@
       line-height: 30px;
       font-size: 17px;
       color: #222;
+      border-bottom: 2px solid #138A64;
       .btn-wrap {
         float: right;
         i {
@@ -103,12 +104,12 @@
     }
     .content {
       min-height: 100px;
-      border-top: 2px solid #138A64;
+      padding: 15px 0 15px 15px;
       background: #F5F7F8;
       overflow: hidden;
     }
     .feature-songs {
-      padding: 15px 0 15px 30px;
+      padding-left: 15px;
       background: #F5F7F8;
       width: 1390px;
       color: #999;
@@ -157,7 +158,96 @@
       }
     }
   }
-  /* !右侧 */
+  // -新碟榜
+  .new-albums {
+    .content {
+      min-height: 100px;
+      padding: 15px;
+      background: #F5F7F8;
+      overflow: hidden;
+    }
+    .album-item {
+      float: left;
+      padding: 0 15px 15px;
+      width: 25%;
+      .cover {
+        display: inline-block;
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    h3 {
+      margin: 15px 0 5px;
+      font-size: 15px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    h4 {
+      font-size: 12px;
+      color: #999;
+    }
+  }
+  // -近期热门歌单
+  .hot-programmes {
+    .content {
+      padding: 15px 0 0 15px;
+      overflow: hidden;
+      background: #F5F7F8;
+    }
+    .programme-item {
+      float: left;
+      width: 50%;
+      padding: 0 15px 15px 0;
+      .item-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .cover {
+        flex-shrink: 0;
+        width: 40px;
+        margin-right: 10px;
+        img {
+          width: 100%;
+        }
+      }
+      .detail {
+        flex: 1;
+        h3 {
+          font-size: 15px;
+          margin-bottom: 15px;
+          span {
+            color: #999;
+            font-size: 12px;
+          }
+        }
+        h4 {
+          margin-bottom: 12px;
+          a {
+            color: #666;
+            &:hover {
+              background-color: #666;
+              color: #fff;
+            }
+          }
+        }
+        li {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 200px;
+        }
+      }
+    }
+
+  }
+
+  // *右侧
   .aside {
     color: #222;
     font-size: 15px;
@@ -208,36 +298,6 @@
       border-bottom: 1px solid #eee;
       .play-all {
         float: right;
-      }
-    }
-    .section-titles {
-      overflow: hidden;
-      margin-top: 10px;
-      li {
-        float: left;
-        font-size: 13px;
-        &::before {
-          display: inline-block;
-          content: "|";
-          padding: 0 3px;
-          color: #333;
-        }
-        a {
-          color: #999;
-          font-weight: normal;
-        }
-        &:first-child {
-          &::before {
-            content: "";
-            color: transparent;
-          }
-        }
-        &.on {
-          a {
-            color: #138A64;
-            font-weight: 600;
-          }
-        }
       }
     }
     .hot-artist-songs {
@@ -349,6 +409,62 @@
               color: #fff;
             }
           }
+        }
+      }
+    }
+  }
+
+  // !二级分类头部栏
+  .sub-header {
+    position: relative;
+    color: #222;
+    line-height: 1.5;
+    border-bottom: 2px solid #138A64;
+    .title {
+      font-size: 17px;
+      margin-right: 15px;
+    }
+    .more {
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+      color: #999;
+      font-size: 13px;
+      line-height: 12px;
+      &:hover {
+        color: #fff;
+        background-color: #999;
+      }
+    }
+  }
+  // !通用的一些组件样式
+  .section-titles {
+    display: inline-block;
+    line-height: 13px;
+    overflow: hidden;
+    li {
+      float: left;
+      font-size: 13px;
+      &::before {
+        display: inline-block;
+        content: "|";
+        padding: 0 3px;
+        color: #333;
+      }
+      a {
+        color: #999;
+        font-weight: normal;
+      }
+      &:first-child {
+        &::before {
+          content: "";
+          color: transparent;
+        }
+      }
+      &.on {
+        a {
+          color: #138A64;
+          font-weight: 600;
         }
       }
     }
