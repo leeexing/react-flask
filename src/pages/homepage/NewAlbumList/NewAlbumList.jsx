@@ -34,7 +34,7 @@ class NewAlbumList extends Component {
       <div className="new-albums">
         <SubHeader
           headerText="新碟榜"
-          more="true"
+          more={true}
         >
           <SubSection index={this.state.index} sectionTitles={titles} handleSectionTitle={this.handleSectionTitle.bind(this)}/>
         </SubHeader>

@@ -76,13 +76,11 @@ class NavBar extends Component {
   componentDidMount () {
     console.log(this.props, '+++++')
   }
-  // logout () {
-  //   console.log(898)
-  //   this.props.dispatch({type: 'LOGOUT'})
-  //   this.props.history.push('/login')
-  // }
+  logout () {
+    this.props.dispatch({type: 'LOGOUT'})
+    this.props.history.push('/login')
+  }
   render () {
-    const { handleLogout } = this.props
     let hasNoLogin = (
       <div className="nav-info">
         <Link to="/login">登录</Link>
@@ -94,8 +92,7 @@ class NavBar extends Component {
       <div className="nav-info">
         <Link to="/reminder">提醒</Link>
         <Link to="/doumail">豆邮</Link>
-        <a onClick={handleLogout}>退出</a>
-        {/* <a onClick={this.logout.bind(this)}>退出</a> */}
+        <a onClick={this.logout.bind(this)}>退出</a>
         {/* <Link to="/login" onClick={this.logout.bind(this)}>退出</Link> */}
       </div>
     )
@@ -157,21 +154,6 @@ let mapStateToProps = ({userInfo}) => {
   console.log(userInfo)
   return {
     hasLogin: userInfo['hasLogin']
-  }
-}
-
-let mapDispatchToProps = (dispatch) => {
-  return {
-    handleLogout: () => {
-      dispatch({
-        type: 'LOGOUT' // -这里需要进行路由跳转，不是纯函数
-      })
-    },
-    handleOther: () => {
-      dispatch({
-        type: 'OTHERS'
-      })
-    }
   }
 }
 
