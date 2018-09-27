@@ -60,8 +60,11 @@ class NavBar extends Component {
           name: '音乐人',
           path: 'musician'
         }, {
+          name: '专题',
+          path: '/topic'
+        },{
           name: '排行榜',
-          path: '/'
+          path: '/chart'
         }, {
           name: '分类浏览',
           path: '/classify'
