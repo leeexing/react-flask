@@ -1,3 +1,5 @@
+@import '../mixin.less';
+
 .app-home {
   // !左边
   .article, .aside aside {
@@ -20,13 +22,14 @@
   .pop-artist {
     .pop-header {
       line-height: 30px;
-      font-size: 17px;
-      color: #222;
       border-bottom: 2px solid #138A64;
       span {
         font-size: 14px;
-        &.fast {
-          color: #999;
+        color: #999;
+        cursor: pointer;
+        &.on {
+          font-size: 17px;
+          color: #222;
         }
         &.cut-off-line {
           padding: 0 2px;
@@ -37,6 +40,8 @@
       }
     }
     .pop-list {
+      display: flex;
+      flex-wrap: wrap;
       min-height: 100px;
       padding: 15px 0 0 30px;
       background: #F5F7F8;
@@ -74,9 +79,12 @@
           }
         }
         .title {
+          display: inline-block;
+          max-width: 120px;
           line-height: 30px;
           color: #138A64;
           font-size: 16px;
+          #ellipsis;
         }
         .gener {
           color: #999;
@@ -99,6 +107,14 @@
         i {
           margin-right: 4px;
           color: #138A64;
+          cursor: pointer;
+          &:hover {
+            opacity: .8;
+          }
+          &.disabled {
+            color: #999;
+            pointer-events: none;
+          }
         }
       }
     }
@@ -112,8 +128,12 @@
       padding-left: 15px;
       background: #F5F7F8;
       width: 1390px;
-      color: #999;
+      color: #666;
       overflow: hidden;
+      transition: all .3s;
+      &.next {
+        transform: translateX(-635px);
+      }
     }
     .feature-song {
       float: left;
@@ -154,7 +174,7 @@
         line-height: 1.5;
         font-weight: 400;
         font-size: 12px;
-        color: #aaa;
+        color: #999;
       }
     }
   }
@@ -392,6 +412,7 @@
       li {
         width: 90px;
         margin: 0 10px 10px 0;
+        padding-left: 10px;
         text-align: center;
         overflow: hidden;
         img {
@@ -414,20 +435,25 @@
     }
   }
 
-  // !二级分类头部栏
+  // !二级分类头部栏【本周流行、编辑推荐、新碟榜等...】
   .sub-header {
     position: relative;
+    border-bottom: 1px solid #E4E2E2;
     color: #222;
     line-height: 1.5;
-    border-bottom: 2px solid #138A64;
-    .title {
+    font-size: 15px;
+    &.bold {
+      border-bottom: 2px solid #138A64;
       font-size: 17px;
+    }
+    .title {
       margin-right: 15px;
     }
     .more {
       position: absolute;
       right: 0;
       bottom: 5px;
+      padding: 2px;
       color: #999;
       font-size: 13px;
       line-height: 12px;
@@ -437,7 +463,7 @@
       }
     }
   }
-  // !通用的一些组件样式
+  // !通用的一些组件样式【最热|华语|民谣|...】
   .section-titles {
     display: inline-block;
     line-height: 13px;

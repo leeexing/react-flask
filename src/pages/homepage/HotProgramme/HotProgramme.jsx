@@ -22,7 +22,8 @@ class NewAlbumList extends Component {
       <div className="hot-programmes">
         <SubHeader
           headerText="近期热门歌单"
-          more="true"
+          more
+          bold
         >
           <SubSection index={this.state.index} sectionTitles={titles} handleSectionTitle={this.handleSectionTitle.bind(this)}/>
         </SubHeader>

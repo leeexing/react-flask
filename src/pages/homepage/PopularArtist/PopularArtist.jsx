@@ -2,17 +2,30 @@ import React, { Component } from 'react'
 import { Icon } from 'antd'
 
 class leeing extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      type: 'hot'
+    }
+  }
+  handleClickTab (type) {
+    console.log(type)
+    this.setState({
+      type
+    })
+  }
   render () {
+    const renderData = this.state.type === 'hot' ? this.props.popularArtists : this.props.newArtists
     return (
       <div className="pop-artist">
         <div className="pop-header">
-          本周流行音乐人
+          <span className={['hot', this.state.type === 'hot' && 'on'].join(' ')} onClick={this.handleClickTab.bind(this, 'hot')}>本周流行音乐人</span>
           <span className="cut-off-line">|</span>
-          <span className="fast">上升最快音乐人</span>
+          <span className={['fast', this.state.type === 'fast' && 'on'].join(' ')} onClick={this.handleClickTab.bind(this, 'fast')}>上升最快音乐人</span>
         </div>
         <ul className="pop-list">
         {
-          this.props.popularArtists.map((item, index) => {
+          renderData.map((item, index) => {
             let itemStyle = {
               backgroundImage: `url(${item.artistPhotoImg})`
             }

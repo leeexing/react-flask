@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
-import { Icon } from 'antd'
+import { Icon, Button } from 'antd'
 
 class leeing extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      next: false
+    }
+  }
+  handleClickNext (next) {
+    this.setState({
+      next
+    })
+  }
   render () {
     const hotSongs = this.props.editorFeatureSongs
     return (
@@ -9,12 +20,12 @@ class leeing extends Component {
         <div className="header">
           编辑推荐
           <div className="btn-wrap">
-            <Icon type="left-circle" theme="outlined" />
-            <Icon type="right-circle" theme="outlined" />
+            <Icon className={this.state.next && 'disabled'} type="left-circle" theme="outlined" onClick={this.handleClickNext.bind(this, true)}/>
+            <Icon className={!this.state.next && 'disabled'} type="right-circle" theme="outlined" onClick={this.handleClickNext.bind(this, false)}/>
           </div>
         </div>
         <div className="content">
-          <ul className="feature-songs">
+          <ul className={['feature-songs', this.state.next && 'next'].join(' ')}>
           {
             hotSongs.map((song, index) => {
               let itemStyle = {
