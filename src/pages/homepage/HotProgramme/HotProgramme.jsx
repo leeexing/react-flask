@@ -1,24 +1,13 @@
 import React, { Component } from 'react'
 import SubSection from "components/SubSection/SubSection"
 import SubHeader from "components/SubHeader/SubHeader"
-import api from '@/api'
 
 class NewAlbumList extends Component {
   constructor (props) {
     super(props)
     this.state = {
       index: 0,
-      hotProgrammes: {
-        sections: []
-      }
     }
-  }
-  componentDidMount () {
-    api.getPopularSongs().then(res => {
-      this.setState({
-        hotProgrammes: res.reactRenderData[1]
-      })
-    })
   }
   handleSectionTitle (index) {
     this.setState({
@@ -26,9 +15,9 @@ class NewAlbumList extends Component {
     })
   }
   render () {
-    let hotProgrammes = this.state.hotProgrammes.sections[this.state.index]
+    let hotProgrammes = this.props.hotProgramme.sections[this.state.index]
     hotProgrammes = hotProgrammes ? hotProgrammes.programmes : []
-    const titles = this.state.hotProgrammes.sections.map(item => item.title)
+    const titles = this.props.hotProgramme.sections.map(item => item.title)
     return (
       <div className="hot-programmes">
         <SubHeader

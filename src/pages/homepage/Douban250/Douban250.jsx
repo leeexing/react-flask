@@ -1,21 +1,8 @@
 import React, { Component } from 'react'
 // import { Button, Icon } from 'antd'
-import api from '@/api'
+// import api from '@/api'
 
 class leeing extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      popularSongs: []
-    }
-  }
-  componentDidMount () {
-    api.getDouban250().then(res => {
-      this.setState({
-        popularSongs: res.douban250
-      })
-    })
-  }
   render () {
     return (
       <div className="douban-songs">
@@ -25,7 +12,7 @@ class leeing extends Component {
         </div>
         <ul className="content">
         {
-          this.state.popularSongs.map((item, index) =>
+          this.props.doubanMusic250.map((item, index) =>
             <li key={index}>
               <a href="">
                 <img src={item.cover} alt=""/>

@@ -1,23 +1,9 @@
 import React, { Component } from 'react'
 import { Icon } from 'antd'
-import api from '@/api'
 
 class leeing extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      editorRecommendSongs: []
-    }
-  }
-  componentDidMount () {
-    api.getEditorFeatureSongs().then(res => {
-      this.setState({
-        editorRecommendSongs: res.editorFeatureSongs
-      })
-    })
-  }
   render () {
-    const hotSongs = this.state.editorRecommendSongs
+    const hotSongs = this.props.editorFeatureSongs
     return (
       <div className="editor-feature">
         <div className="header">

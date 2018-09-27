@@ -1,21 +1,7 @@
 import React, { Component } from 'react'
 import { Icon } from 'antd'
-import api from '@/api'
 
 class leeing extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      popularArtistList: []
-    }
-  }
-  componentDidMount () {
-    api.getPopularArtists().then(res => {
-      this.setState({
-        popularArtistList: res.topArtists
-      })
-    })
-  }
   render () {
     return (
       <div className="pop-artist">
@@ -26,7 +12,7 @@ class leeing extends Component {
         </div>
         <ul className="pop-list">
         {
-          this.state.popularArtistList.map((item, index) => {
+          this.props.popularArtists.map((item, index) => {
             let itemStyle = {
               backgroundImage: `url(${item.artistPhotoImg})`
             }

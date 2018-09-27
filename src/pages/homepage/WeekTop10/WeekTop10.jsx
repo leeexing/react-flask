@@ -1,25 +1,12 @@
 import React, { Component } from 'react'
 import { Button, Icon } from 'antd'
-import api from '@/api'
 
 class leeing extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      popularSongs: {
-        sections: [],
-        title: '本周单曲榜'
-      },
       index: 0
     }
-  }
-  componentDidMount () {
-    api.getPopularSongs().then(res => {
-      console.log(res)
-      this.setState({
-        popularSongs: res.reactRenderData[2]
-      })
-    })
   }
   handleHotSongs (index) {
     console.log(index, '+++')
@@ -28,14 +15,7 @@ class leeing extends Component {
     })
   }
   render () {
-    // const hotSongs = [
-    //   {src: 'https://img1.doubanio.com/view/sitesong/small/public/1535692767.jpg', name: 'Hold On To My Side (留在我身边)', author: '梁晓雪', times: 9913},
-    //   {src: 'https://img3.doubanio.com/view/site/small/public/5e7b323e46750dd.jpg', name: '大圣啊', author: '尚哲', times: 1735},
-    //   {src: 'https://img1.doubanio.com/view/site/small/public/fa424d747eb8449.jpg', name: 'Bon Anniversaire', author: 'Magic', times: 365},
-    //   {src: 'https://img1.doubanio.com/view/site/small/public/c7a7cbe1ae4ea1a.jpg', name: '燕园画像（女生版） ', author: 'Loop Fighter', times: 1025},
-    //   {src: 'https://img3.doubanio.com/view/sitesong/small/public/1535031794.jpg', name: 'Last Days of Louis XIV (Mark Lee mix)', author: '绝对春节', times: 520},
-    // ]
-    const activeSection = this.state.popularSongs.sections[this.state.index]
+    const activeSection = this.props.weekTop10.sections[this.state.index]
     const hotSongs = activeSection ? activeSection.songs : []
     return (
       <div className="hot-songs">
@@ -46,7 +26,7 @@ class leeing extends Component {
         <div className="content">
           <ul className="section-titles">
           {
-            this.state.popularSongs.sections.map((item, index) =>
+            this.props.weekTop10.sections.map((item, index) =>
               <li className={this.state.index === index ? 'on' : ''} key={index} onClick={this.handleHotSongs.bind(this, index)}>
                 <a>{item.title}</a>
               </li>

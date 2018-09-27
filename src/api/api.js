@@ -7,7 +7,7 @@ const DoubanMusicApi = {
   },
   // *首页react相关组件渲染数据
   getHomeReactData () {
-    return http.get('/api/home/reactData')
+    return http.get('/api/home/hotsongs')
   },
   // *左边
   getTopBannerImgs () { // ^头部轮播图

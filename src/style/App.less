@@ -1,3 +1,6 @@
+@import './mixin.less';
+@import './variable.less';
+
 body {
   margin: 0;
   padding: 0;
@@ -21,12 +24,38 @@ h3, h4 {
     margin-bottom: 40px;
     background: #f0f3ef;
   }
+  &-main {
+    min-height: 400px;
+  }
   &-home {
-    width: 1000px;
+    width: @mainWidth;
     margin: 0 auto;
     aside{
       width: 300px;
       margin: 0 auto;
+    }
+  }
+  &-footer {
+    #flex;
+    #w(@mainWidth);
+    margin: 40px auto 0;
+    padding: 8px 0;
+    border-top: 1px dashed #ddd;
+    font-size: 12px;
+    .copyright {
+      color: #999;
+    }
+    .link {
+      a {
+        display: inline-block;
+        margin-right: 4px;
+        margin-left: 4px;
+        color: #37a;
+        &:hover {
+          background: #37a;
+          color: #fff;
+        }
+      }
     }
   }
 }

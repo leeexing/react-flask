@@ -6,8 +6,10 @@ import { withRouter } from 'react-router'
 import 'styles/navBar.less'
 
 const appContent = (
-  <div>
-    <p>Content</p>
+  <div className="douban-app">
+    <img className="app-logo" src="https://img3.doubanio.com/f/frodo/144e6fb7d96701944e7dbb1a9bad51bdb1debe29/pics/app/logo.png" alt=""/>
+    <h3>豆瓣</h3>
+    <img className="app-qr" src="https://img3.doubanio.com/f/frodo/cb278672a7ed5e611bd06d07592cf865a3f5cd91/pics/app/pin.png" alt=""/>
   </div>
 )
 
@@ -73,9 +75,6 @@ class NavBar extends Component {
       ]
     }
   }
-  componentDidMount () {
-    console.log(this.props, '+++++')
-  }
   logout () {
     this.props.dispatch({type: 'LOGOUT'})
     this.props.history.push('/login')
@@ -110,7 +109,9 @@ class NavBar extends Component {
           </div>
           <div className="nav-others">
             <div className="nav-doubanapp">
-              <Link to="/doubanapp">下载豆瓣客户端</Link>
+              <Popover content={appContent} placement="bottom">
+                <Link to="/doubanapp">下载豆瓣客户端</Link>
+              </Popover>
             </div>
             {
               this.state.isSignIn ? hasLogin : hasNoLogin
@@ -120,9 +121,7 @@ class NavBar extends Component {
         <div className="app-nav-search">
           <div className="nav-wrap">
             <div className="nav-logo">
-              <Popover content={appContent} placement="bottom" title="5465">
-                <Link to="/">豆瓣音乐</Link>
-              </Popover>
+              <Link to="/">豆瓣音乐</Link>
             </div>
             <div className="nav-search">
             <Input.Search

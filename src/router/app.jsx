@@ -1,11 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import { BackTop } from 'antd'
 import Todo from 'pages/todo'
 import HomePage from 'pages/homepage'
 import NavBar from 'components/NavBar'
 import NotFoundRoute from 'pages/404page'
 import ServerError from 'pages/500page'
-// import Footer from 'components/Footer'
+import Footer from 'components/Footer'
 
 const host = ''
 const Routes = () => (
@@ -19,7 +20,8 @@ const Routes = () => (
         <Route path={'/*'} component={NotFoundRoute}></Route>
       </Switch>
     </main>
-    {/* <Footer/> */}
+    <Footer/>
+    <BackTop/>
   </React.Fragment>
 )
 

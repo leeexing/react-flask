@@ -1,4 +1,4 @@
-@mixin clearfix {
+#mixin clearfix {
   &:after {
     content: "";
     display: table;
@@ -6,7 +6,7 @@
   }
 }
 
-@mixin scrollBar {
+#mixin scrollBar {
   &::-webkit-scrollbar-track-piece {
     background: #d3dce6;
   }
@@ -17,4 +17,18 @@
     background: #99a9bf;
     border-radius: 20px;
   }
+}
+
+#flex(@j:space-between, @a:center) {
+  display: flex;
+  justify-content: @j;
+  align-items: @a;
+}
+
+#mt(@v) {
+  margin-top: @v;
+}
+
+#w(@v) {
+  width: @v;
 }
