@@ -7,13 +7,14 @@ const TodosReducer = (state = TodoState.todos, action) => {
   const {type} = action
   switch (type) {
     case 'ADD_TODO':
-      return state.concat([{text: action.text, completed: false}])
+      return state.concat([{id: action.id, text: action.text, completed: false}])
     case 'DELETE_TODO':
       state.splice(action.index, 1)
       return state
     case 'TOGGLE_TODO':
-      return state.map((item, index) =>
-        action.index === index ? {text: item.text, completed: !item.completed} : item
+      console.log(action, 666)
+      return state.map(item =>
+        action.id === item.id ? {...item, completed: !item.completed} : item
       )
     default:
       return state
