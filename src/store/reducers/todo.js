@@ -3,8 +3,7 @@ const TodoState = {
   visibilityFilter: 'SHOW_COMPLETED'
 }
 
-const TodosReducer = (state = TodoState, action) => {
-  // console.log('todosReducer was called with state ', state, 'and action', action)
+const TodosReducer = (state = TodoState.todos, action) => {
   const {type} = action
   switch (type) {
     case 'ADD_TODO':

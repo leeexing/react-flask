@@ -1,11 +1,10 @@
-const actionCreatorOfUser = type => {
-  return {
-    type,
-    payLoad
-  }
-}
+export const userLogin = () => ({
+  type: 'LOGIN',
+  hasLogin: true
+})
 
-export {
-  actionCreatorOfUser
-}
+export const userLogout = () => ({
+  type: 'LOGOUT',
+  hasLogin: false
+})
 

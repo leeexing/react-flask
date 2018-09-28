@@ -1,5 +1,35 @@
 # React
 
+## 编码规范
+
+1. 在render方法中事件的回调函数，应该在构造函数中进行bind绑定
+  1. 因为在render方法中的bind调用，每次调用render的时候都会创建一个全新的函数
+  2. 需要传递参数的时候，使用 {() => this.method(pramas)}
+2. 属性名始终使用驼峰命名法
+3. 文件名使用首字母大写（帕斯卡命名法），组件名和文件名一样
+4. 当属性值等于true的时候，省略该属性的赋值
+5. 怎样定义 propTypes、defaultProps、contextTypes
+
+```jsx
+const propTypes = {
+  id: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string
+}
+const defaultProps = {
+  text: 'Hello World'
+}
+
+class Link extends React.Component {
+  // ...
+}
+
+Link.propTypes = propTypes
+Link.defaultProps = defaultProps
+
+export default Link
+```
+
 ## react-dom
 
 react.js 是 React 的核心库。react-dom 是提供与 DOM 相关的功能
@@ -38,6 +68,14 @@ const Title =
 （2）输出逻辑：用户发出的动作如何变为 Action 对象，从 UI 组件传出去。
 
 😍参考 [http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.htmls]
+
+
+实现容器组件
+创建一些容器组建把展示组件和Redux关联起来。
+容器组件就是使用 store.subscribe() 从redux state 树中读取部分数据，并通过props来吧这些数据提供给要渲染的组件
+使用react redux 库的 connect（）方法来生成。这个方法做了性能优化来避免很多不必要的重复渲染
+使用connect（）前，需要定义 mapStateToProps 这个函数来指定如何把当前 redux store state 映射到展示组件的 props 中
+还可以定义 mapDispatchToProps() 方法接收 dispatch（）方法并返回期望注入到展示组件的props中的回调方法
 
 ## PropTypes学习
 

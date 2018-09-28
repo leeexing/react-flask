@@ -1,4 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
+const propTypes = {
+  style: PropTypes.object
+}
+const defaultProps = {
+  style: {}
+}
+
 
 function SubHeader (props) {
   let className = 'sub-header'
@@ -21,8 +30,7 @@ function SubHeader (props) {
   )
 }
 
-SubHeader.defaultProps = {
-  style: {}
-}
+SubHeader.propTypes = propTypes
+SubHeader.defaultProps = defaultProps
 
 export default SubHeader

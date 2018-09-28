@@ -15,12 +15,12 @@ const userReducer = (state=userState, action) => {
     case 'LOGIN':
       return {
         ...state,
-        hasLogin: true
+        hasLogin: action.hasLogin
       }
     case 'LOGOUT':
       return {
         ...state,
-        hasLogin: false
+        hasLogin: action.hasLogin
       }
     default:
       return state

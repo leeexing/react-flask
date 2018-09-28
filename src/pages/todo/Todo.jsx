@@ -16,6 +16,10 @@ class Todo extends Component {
       curretUser: null,
       value: 1
     }
+    this.addTodo = this.addTodo.bind(this)
+    this.clearDone = this.clearDone.bind(this)
+    this.changeTodoState = this.changeTodoState.bind(this)
+    this.deleteTodo = this.deleteTodo.bind(this)
   }
   componentDidMount() {
     console.log('todo list start')
@@ -68,8 +72,8 @@ class Todo extends Component {
     let info = {
       isAllChecked: this.state.isAllChecked,
       todoCount: this.state.todos.length || 0,
-      // todoDoneCount: (this.state.todos && (this.state.todos.filter(todo => todo.isDone).lenngth || 0))
       todoDoneCount: (this.state.todos && pipe(filter(prop('isDone')), length)(this.state.todos))
+      // todoDoneCount: (this.state.todos && (this.state.todos.filter(todo => todo.isDone).lenngth || 0))
     }
     return (
       <div className="m-todo">
@@ -77,9 +81,9 @@ class Todo extends Component {
           title="Todo List"
           style={{width: 500}}
         >
-          <TodoHeader addTodo={this.addTodo.bind(this)}/>
-          <TodoMain todos={this.state.todos} changeTodoState={this.changeTodoState.bind(this)} deleteTodo={this.deleteTodo.bind(this)}/>
-          <TodoFooter {...info} clearDone={this.clearDone.bind(this)} changeTodoState={this.changeTodoState.bind(this)}/>
+          <TodoHeader addTodo={this.addTodo}/>
+          <TodoMain todos={this.state.todos} changeTodoState={this.changeTodoState} deleteTodo={this.deleteTodo}/>
+          <TodoFooter {...info} clearDone={this.clearDone} changeTodoState={this.changeTodoState}/>
         </Card>
       </div>
     )

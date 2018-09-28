@@ -52,7 +52,7 @@ class NavBar extends Component {
           path: '/todo'
         },{
           name: '更多',
-          path: '/more'
+          path: '/todoredux'
         },
       ],
       navSecondItems: [

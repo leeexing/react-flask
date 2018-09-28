@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { Icon, Button } from 'antd'
+import { Icon } from 'antd'
 
 class leeing extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      next: false
+      next: true
     }
+    this.handleClickNext = this.handleClickNext.bind(this)
   }
   handleClickNext (next) {
     this.setState({
@@ -20,8 +21,8 @@ class leeing extends Component {
         <div className="header">
           编辑推荐
           <div className="btn-wrap">
-            <Icon className={this.state.next && 'disabled'} type="left-circle" theme="outlined" onClick={this.handleClickNext.bind(this, true)}/>
-            <Icon className={!this.state.next && 'disabled'} type="right-circle" theme="outlined" onClick={this.handleClickNext.bind(this, false)}/>
+            <Icon className={this.state.next && 'disabled'} type="left-circle" theme="outlined" onClick={() => this.handleClickNext(true)}/>
+            <Icon className={!this.state.next && 'disabled'} type="right-circle" theme="outlined" onClick={() => this.handleClickNext(false)}/>
           </div>
         </div>
         <div className="content">
