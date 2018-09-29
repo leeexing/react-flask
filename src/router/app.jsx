@@ -10,6 +10,7 @@ import ServerError from 'pages/500page'
 import Footer from 'components/Footer'
 import Chart from 'pages/Chart'
 import Topic from 'pages/Topic'
+import TagsScan from 'pages/TagsScan'
 
 const host = ''
 const Routes = () => (
@@ -21,7 +22,8 @@ const Routes = () => (
         <Route path={`/${host}todoredux`} component={TodoRedux}/>
         <Route path={`/${host}500`} component={ServerError}/>
         <Route path={`/${host}chart`} component={Chart}/>
-        <Route path={`/${host}topic`} component={Topic}/>
+        <Route path={`/${host}topics`} component={Topic}/>
+        <Route path={`/${host}tags`} component={TagsScan}/>
         <Route path={`/${host}`} exact component={HomePage}/>
         <Route path={'/*'} component={NotFoundRoute}/>
       </Switch>

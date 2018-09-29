@@ -31,7 +31,7 @@ class NavBar extends Component {
           path: '/film'
         },{
           name: '音乐',
-          path: '/music'
+          path: '/'
         },{
           name: '同城',
           path: '/local'
@@ -60,20 +60,32 @@ class NavBar extends Component {
           name: '音乐人',
           path: 'musician'
         }, {
+          name: '潮潮豆瓣音乐周',
+          path: 'musicweek'
+        }, {
+          name: '金羊毛计划',
+          path: 'plan'
+        }, {
           name: '专题',
-          path: '/topic'
+          path: '/topics'
         },{
           name: '排行榜',
           path: '/chart'
         }, {
           name: '分类浏览',
-          path: '/classify'
+          path: '/tags'
         }, {
           name:'乐评',
           path: '/reviews'
         }, {
+          name: '豆瓣FM',
+          path: 'doubanfm'
+        }, {
           name: '歌单',
           path: '/songlist'
+        }, {
+          name: '阿比鹿音乐奖',
+          path: '/awards'
         }
       ]
     }

@@ -1,7 +1,9 @@
-import DoubanMusicApi from './api'
+import DoubanMusicHome from './home'
+import DoubanMusicTopics from './topic'
 
 const APIS = {
-  ...DoubanMusicApi
+  ...DoubanMusicHome,
+  ...DoubanMusicTopics
 }
 
 export default APIS

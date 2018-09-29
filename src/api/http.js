@@ -3,16 +3,17 @@
  */
 import axios from 'axios'
 import qs from 'qs'
+import { message } from 'antd'
 // import { getToken } from '@/util/auth'
 // import router from '../router'
 
-// 创建axios实例
+// !创建axios实例
 const service = axios.create({
   baseURL: 'http://localhost:7012',
   timeout: 5000
 })
 
-// 请求拦截
+// !请求拦截
 // service.interceptors.request.use(config => {
 //   let userTicket = getToken()
 //   if (userTicket) {
@@ -23,32 +24,31 @@ const service = axios.create({
 //   return Promise.reject(error)
 // })
 
-// // 响应拦截
-// service.interceptors.response.use(response => {
-//   let message = response.data.error || response.data.message
-//   if (!response.data.success) {
-//     return Promise.reject(response.data)
-//   }
-//   return response
-// }, error => {
-//   console.log(error)
-//   if (error.response) {
-//     switch (error.response.status) {
-//       case 401:
-//         console.log('%c ❗❗❗ 通过服务器进行权限限制 ', 'background:#f90;color:#555')
-//         // 也可以通过window.location.href='/login'; 区别是什么呢？vuex 里面的状态可以清除
-//         router.push('/login')
-//         return Promise.reject(error.response)
-//       case 500:
-//         router.push({name: 'serverError', params: {errorMessage: error}})
-//         return Promise.reject(error.response)
-//       default:
-//         break
-//     }
-//   } else {
-//     router.push('/login')
-//   }
-// })
+// !响应拦截
+service.interceptors.response.use(response => {
+  if (!response.data.result) {
+    return Promise.reject(response.data.msg)
+  }
+  return response
+}, error => {
+  if (error.response) {
+    switch (error.response.status) {
+      case 401:
+        console.log('%c ❗❗❗ 通过服务器进行权限限制 ', 'background:#f90;color:#555')
+        // 也可以通过window.location.href='/login'; 区别是什么呢？vuex 里面的状态可以清除
+        // router.push('/login')
+        return Promise.reject(error.response)
+      case 500:
+        // router.push({name: 'serverError', params: {errorMessage: error}})
+        message.error('Server Error')
+        return Promise.reject(error.response)
+      default:
+        break
+    }
+  } else {
+    // router.push('/login')
+  }
+})
 
 export default {
   get (url, data = {}, options = {}) {

@@ -5,7 +5,7 @@ class leeing extends Component {
 
   render () {
     return (
-      <div className="app-topic">
+      <div className="app-home m-chart">
         <Row gutter={16}>
           <Col span={16}>
             <h3>音乐排行榜</h3>
