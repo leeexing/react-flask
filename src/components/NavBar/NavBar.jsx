@@ -165,7 +165,6 @@ class NavBar extends Component {
 }
 
 let mapStateToProps = ({userInfo}) => {
-  console.log(userInfo)
   return {
     hasLogin: userInfo['hasLogin']
   }

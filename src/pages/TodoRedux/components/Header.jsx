@@ -77,7 +77,6 @@ class Header extends Component {
 }
 
 const mapStateToProps = ({todos}, ownProps) => {
-  console.log(todos, '+++')
   return {
     todos
   }

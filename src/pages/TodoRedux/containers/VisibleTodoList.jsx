@@ -3,7 +3,6 @@ import { toggleTodo } from '@/store/actions'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filterType) => {
-  console.log(todos, filterType, '*-*-*-*')
   switch (filterType) {
     case 'SHOW_ALL':
       return todos
@@ -17,7 +16,6 @@ const getVisibleTodos = (todos, filterType) => {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     todos: getVisibleTodos(state.todos, state.visibleFilter)
   }

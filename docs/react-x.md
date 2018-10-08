@@ -255,6 +255,28 @@ react-router-dom中package.json依赖:
 
 ## redux
 
+### 减少样板代码
+
+```jsx
+const ADD_TODO = 'ADD_TODO';
+const REMOVE_TODO = 'REMOVE_TODO';
+const LOAD_ARTICLE = 'LOAD_ARTICLE';
+```
+
+对于大的项目，将 action types 定义为常量有如下好处：
+
+帮助维护命名一致性，因为所有的 action type 汇总在同一位置。
+有时，在开发一个新功能之前你想看到所有现存的 actions 。而你的团队里可能已经有人添加了你所需要的action，而你并不知道。
+Action types 列表在 Pull Request 中能查到所有添加，删除，修改的记录。这能帮助团队中的所有人及时追踪新功能的范围与实现。
+如果你在 import 一个 Action 常量的时候拼写错了，你会得到 undefined 。在 dispatch 这个 action 的时候，Redux 会立即抛出这个错误，你也会马上发现错误。
+
+你的项目约定取决与你自己。开始时，可能在刚开始用内联字符串（inline string），之后转为常量，也许再之后将他们归为一个独立文件。Redux 在这里没有任何建议，选择你自己最喜欢的。
+
+**Action Creators**
+另一个约定俗成的做法是通过创建函数生成 action 对象，而不是在你 dispatch 的时候内联生成它们。
+你其实可以在单独的文件中写一个 action creator ，然后从 component 里 import：
+
+Action creators 总被当作样板代码受到批评。好吧，其实你并不非得把他们写出来！如果你觉得更适合你的项目，你可以选用对象字面量 然而，你应该知道写 action creators 是存在某种优势的。
 
 ## 敲代码学习
 
