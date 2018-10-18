@@ -5,6 +5,7 @@ import { WeekTop10, Douban250, EditorFeature, NewAlbumList,
 import 'styles/homePage.less'
 import store from '@/store'
 import api from '@/api'
+import '@/util/auth'
 
 class HomePage extends Component {
   constructor (props) {
