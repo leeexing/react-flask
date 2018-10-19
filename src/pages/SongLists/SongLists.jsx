@@ -12,14 +12,9 @@ class Leeing extends Component {
   render () {
     return (
       <div className="app-home">
-        <Row gutter={16}>
-          <Col span={16}>
+        <Row>
+          <Col span={24}>
             <h1>豆瓣音乐标签</h1>
-
-          </Col>
-          <Col span={8}>
-            标签直达 ......
-
           </Col>
         </Row>
       </div>
