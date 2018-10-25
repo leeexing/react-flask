@@ -1,5 +1,5 @@
-import DoubanMusicHome from './home'
-import DoubanMusicTopics from './topic'
+import DoubanMusicHome from './homeApi'
+import DoubanMusicTopics from './topicApi'
 
 const APIS = {
   ...DoubanMusicHome,

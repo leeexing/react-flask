@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import api from '@/api'
+import 'styles/review.less'
 
 class Leeing extends Component {
 

@@ -11,6 +11,9 @@
     text-align: right;
     color: #aaa;
     font-size: 13px;
+    &.dashed {
+      border-bottom: 1px dashed #aaa;
+    }
     .division {
       display: inline-block;
       padding: 0 3px;
@@ -46,18 +49,79 @@
   }
   &-item {
     line-height: 2;
-    a {
-      color: #37a;
-      &:hover {
-        color: #fff;
-        background: #37a;
-      }
-      &:link {
-        color: #49a;
-      }
-    }
+    // a {
+    //   color: #37a;
+    //   &:hover {
+    //     color: #fff;
+    //     background: #37a;
+    //   }
+    //   &:link {
+    //     color: #49a;
+    //   }
+    // }
     span {
       color: #aaa;
+    }
+  }
+  // 详情
+  &-detail-list {
+    .detail-item {
+      display: flex;
+      padding: 10px 0;
+      border-bottom: 1px dashed #bbb;
+      &:last-child {
+        border-bottom-color: transparent;
+      }
+    }
+    .avatar {
+      flex-shrink: 0;
+      width: 100px;
+      img {
+        width: 80px;
+      }
+    }
+    .info {
+      flex: 1;
+      color: #666;
+      h3 {
+        span {
+          font-size: 12px;
+        }
+      }
+      .content {
+        margin: 10px 0;
+        font-size: 12px;
+      }
+      .star {
+        font-size: 13px;
+        .score {
+          margin-right: 3px;
+          color: #e09015;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  // 右侧
+  &-related {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    a {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+  }
+  &-pagenation {
+    margin-top: 15px;
+    text-align: center;
+  }
+  &-back {
+    margin-top: 50px;
+    a {
+      margin-left: 3px;
     }
   }
 }

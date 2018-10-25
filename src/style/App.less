@@ -11,6 +11,38 @@ a {
   color: #138A64;
 }
 
+.a {
+  display: inline-block;
+  color: #37a;
+  &:visited {
+    color: #8f66af;
+  }
+  &:hover {
+    color: #fff;
+    background: #37a;
+  }
+  h3 {
+    color: inherit;
+  }
+}
+
+h1 {
+  &.title {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #494949;
+    line-height: 1.1;
+  }
+}
+
+h2 {
+  color: #072;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-size: 15px;
+  font-weight: normal;
+}
+
 h3, h4 {
   font-weight: 400;
 }
@@ -61,6 +93,19 @@ h3, h4 {
           color: #fff;
         }
       }
+    }
+  }
+}
+.app-home {
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      margin: 0 10px 10px 0;
+      padding: 2px 8px;
+      background: #f0f3ef;
+      border-radius: 2px;
+      color: #37a;
     }
   }
 }
