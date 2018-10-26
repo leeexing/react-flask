@@ -18,11 +18,11 @@ export default {
   },
   // -音乐标签：标签详情
   getTagDetail (tagName, data) {
-    return http.get(`/api/tag/${tagName}`, data)
+    return http.get(`/api/tags/${tagName}`, data)
   },
   // -音乐标签：相关标签
   getTagRelated (tagName) {
-    return http.get(`/api/tag/${tagName}/related`)
+    return http.get(`/api/tags/${tagName}/related`)
   },
   // ^主题：
   getSubjectDetail (id) {

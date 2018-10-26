@@ -239,8 +239,17 @@
       .detail {
         flex: 1;
         h3 {
+          display: flex;
+          align-items: center;
           font-size: 15px;
           margin-bottom: 15px;
+          a {
+            display: inline-block;
+            max-width: 80%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
           span {
             color: #999;
             font-size: 12px;

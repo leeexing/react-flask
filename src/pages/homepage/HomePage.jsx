@@ -10,7 +10,7 @@ class HomePage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      dataLoaded: 0,
+      isDataLoaded: false,
       bannerImgs: [],
       popularArtists: [],
       newArtists: [],
@@ -29,21 +29,8 @@ class HomePage extends Component {
       if (res.result) {
         this.setState({
           ...this.state,
-          ...res.data
-        })
-        this.setState({
-          dataLoaded: this.state.dataLoaded + 1
-        })
-      }
-    })
-    api.getHomeReactData().then(res => {
-      if (res.result) {
-        this.setState({
-          ...this.state,
-          ...res.data
-        })
-        this.setState({
-          dataLoaded: this.state.dataLoaded + 1
+          ...res.data,
+          isDataLoaded: true
         })
       }
     })
@@ -51,7 +38,7 @@ class HomePage extends Component {
   render () {
     return (
       <div className="app-home">
-        {this.state.dataLoaded < 2
+        {!this.state.isDataLoaded
           ? <Row gutter={16}>
               <Col span={16}>
                 <Skeleton active paragraph={{ rows: 8 }}/>

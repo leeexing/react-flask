@@ -66,7 +66,7 @@ class Leeing extends Component {
                     <ul className="tag-list">
                     {tag.content.map((item, index) => (
                         <li className="tag-item" key={index}>
-                          <Link to={`/tag/${item.name}`}>{item.name}</Link>
+                          <Link className="a" to={`/tag/${item.name}`}>{item.name}</Link>
                           {/* <Link onClick={this.skipToTagDetail.bind(this, item.name)}>{item.name}</Link> */}
                           <span>({item.number})</span>
                         </li>
@@ -79,7 +79,8 @@ class Leeing extends Component {
                   <ul className="tag-list">
                     {tagList.map((item, index) => (
                         <li className="tag-item" key={index}>
-                          <a href="" onClick={this.skipToTagDetail.bind(this, item.name)}>{item.name}</a>
+                          <Link className="a" to={`/tag/${item.name}`}>{item.name}</Link>
+                          {/* <a href="" onClick={this.skipToTagDetail.bind(this, item.name)}>{item.name}</a> */}
                           <span>({item.number})</span>
                         </li>
                       ))
