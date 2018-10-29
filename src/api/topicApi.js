@@ -28,4 +28,11 @@ export default {
   getSubjectDetail (id) {
     return http.get(`/api/subject/${id}`)
   },
+  // ^排行榜
+  getChart () {
+    return http.get('/api/chart')
+  },
+  getReviewList (data) {
+    return http.get('/api/review', data)
+  },
 }
