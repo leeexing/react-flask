@@ -91,7 +91,8 @@ class TagDetail
                     </div>
                     <div className="info">
                       <Link className="a" to={`/subject/${item.subjectId}`}>
-                        <h3>{item.title}  <span>{item.subTitle}</span>  </h3>
+                        {item.title}
+                        <span>{item.subTitle}</span>
                       </Link>
                       <p className="content">{item.author}</p>
                       <div className="star">
