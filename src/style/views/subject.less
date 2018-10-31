@@ -1,4 +1,49 @@
 .subject {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    .intro {
+      width: 500px;
+      .cover {
+        float: left;
+        width: 135px;
+        img {
+          width: 100%;
+        }
+      }
+      &-list {
+        float: left;
+        margin-left: 10px;
+        font-size: 13px;
+        color: #666;
+        p {
+          line-height: 1.6;
+        }
+        span {
+          color: #222;
+        }
+      }
+    }
+    .score {
+      border-left: 1px solid #ddd;
+      padding-left: 10px;
+      color: #999;
+      font-size: 12px;
+      .stars {
+        display: flex;
+        height: 50px;
+        margin-top: 10px;
+        .num {
+          margin-right: 10px;
+          font-size: 28px;
+          color: #222;
+        }
+        .p {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
   .tags-list {
     margin-bottom: 30px;
   }

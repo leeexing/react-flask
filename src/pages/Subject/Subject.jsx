@@ -4,6 +4,43 @@ import { Col, Row, Rate, Skeleton } from 'antd'
 import api from '@/api'
 import 'styles/subject.less'
 
+const subjectHeader = data =>
+  data.map(item => (
+    <div className="subject-header">
+      <div className="intro">
+        <a href="" className="cover">
+          <img src="https://img1.doubanio.com/view/subject/m/public/s29798769.jpg" alt=""/>
+        </a>
+        <div className="intro-list">
+          <p>又名:</p>
+          <p>表演者:</p>
+          <p>流派:</p>
+          <p>专辑类型:</p>
+          <p>介质:</p>
+          <p>发行时间:</p>
+          <p>出版者:</p>
+        </div>
+      </div>
+      <div className="score">
+        <span>豆瓣评分</span>
+        <div className="stars">
+          <div className="num">5.7</div>
+          <div>
+            <Rate defaultValue={3} style={{fontSize: "12px"}}></Rate>
+            <p className="p"><a href="">人评价</a></p>
+
+          </div>
+        </div>
+        <p>5星</p>
+        <p>4星</p>
+        <p>3星</p>
+        <p>2星</p>
+        <p>1星</p>
+      </div>
+    </div>
+  ))
+
+
 class Subject extends Component {
   constructor (props) {
     super(props)
@@ -14,6 +51,7 @@ class Subject extends Component {
       tags: [],
       collector: [],
       recommend: [],
+      coverDetail: []
     }
   }
   componentDidMount () {
@@ -21,8 +59,10 @@ class Subject extends Component {
     api.getSubjectDetail(subjectId).then(res => {
       console.log(res)
       this.setState({
+        hasData: true,
         title: res.data.title,
-        ...res.data.aside
+        ...res.data.aside,
+        ...res.data.article
       })
     })
   }
@@ -36,6 +76,38 @@ class Subject extends Component {
             ? <Skeleton></Skeleton>
             : ''
           }
+            <div className="subject-header">
+              <div className="intro">
+                <a href="" className="cover">
+                  <img src="https://img1.doubanio.com/view/subject/m/public/s29798769.jpg" alt=""/>
+                </a>
+                <div className="intro-list">
+                  <p>又名:</p>
+                  <p>表演者:</p>
+                  <p>流派:</p>
+                  <p>专辑类型:</p>
+                  <p>介质:</p>
+                  <p>发行时间:</p>
+                  <p>出版者:</p>
+                </div>
+              </div>
+              <div className="score">
+                <span>豆瓣评分</span>
+                <div className="stars">
+                  <div className="num">5.7</div>
+                  <div>
+                    <Rate defaultValue={3} style={{fontSize: "12px"}}></Rate>
+                    <p className="p"><a href="">人评价</a></p>
+
+                  </div>
+                </div>
+                <p>5星</p>
+                <p>4星</p>
+                <p>3星</p>
+                <p>2星</p>
+                <p>1星</p>
+              </div>
+            </div>
           </Col>
           <Col span={8} style={{paddingLeft: "50px"}}>
             <h4 className="aside-title">豆瓣成员常用标签(共{this.state.commonUseTag}个) · · · · · ·</h4>

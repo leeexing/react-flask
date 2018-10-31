@@ -26,7 +26,7 @@ class leeing extends Component {
           </div>
         </div>
         <div className="content">
-          <ul className={['feature-songs', this.state.next && 'next'].join(' ')}>
+          <ul className={['feature-songs', !this.state.next && 'next'].join(' ')}>
           {
             hotSongs.map((song, index) => {
               let itemStyle = {
